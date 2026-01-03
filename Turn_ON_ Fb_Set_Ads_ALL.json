@@ -14,10 +14,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -16,
-        0
+        96,
+        320
       ],
-      "id": "22083553-4476-47d5-827b-092e9df51285",
+      "id": "5dbcf160-0e3c-4607-a3aa-ecf75c58d1c3",
       "name": "Schedule Trigger"
     },
     {
@@ -27,7 +27,7 @@
             {
               "id": "3acae58a-6d3c-4db5-a1aa-edf9cd88181b",
               "name": "access_token",
-              "value": "EAATostwKkxMBQCfStbhkx6Jgdi0DrXO8FZCB32JHhAizaN0O7pZAEZCay2BoMZAYCUZBiqJeoCAj5LScxx2cL1duf8ZCQRT5HIyBnPTCDGpFPiaDABMABgCuaF2eG71rCMSZCskRpF1N60ZCDOWmZCBZAUbeTbeAVlJM1tLj75M4dAlMUia3PmbrrkeeH52R9sXmMMH0VJjBEq2fUz4LIinIYA",
+              "value": "",
               "type": "string"
             },
             {
@@ -39,7 +39,7 @@
             {
               "id": "fa677240-82bc-4d7f-8920-075213b9bdf2",
               "name": "Cam_Chi_Tieu_Nguong_Duoi",
-              "value": 1000,
+              "value": 0,
               "type": "number"
             },
             {
@@ -73,10 +73,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        0
+        320,
+        320
       ],
-      "id": "5588f411-dc29-4520-9072-ed297b235272",
+      "id": "1958eb86-1542-48fe-a867-84e5c29f142f",
       "name": "Thông Số Đầu Vào"
     },
     {
@@ -108,10 +108,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        432,
-        0
+        544,
+        320
       ],
-      "id": "70cab7a7-4254-4543-a167-638dab8cdcfd",
+      "id": "9c4c2bb5-d428-4488-b83a-ddf09acc8795",
       "name": "Quy Đổi Theo Tỷ Suất"
     },
     {
@@ -136,13 +136,13 @@
         },
         "options": {}
       },
-      "id": "9f2ead41-1c06-4b8f-bc1f-3b85be6ceeb6",
+      "id": "d6fa36f5-4be5-4dfd-a280-5cd3b4d66270",
       "name": "Lấy dữ liệu Campaigns",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        656,
-        0
+        768,
+        320
       ],
       "notesInFlow": true,
       "notes": "Lấy tất cả campaigns"
@@ -155,10 +155,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        880,
-        0
+        992,
+        320
       ],
-      "id": "ea20f11a-4db3-44ce-8377-cb738192305d",
+      "id": "9d6f9ffb-c4d2-4873-8d9d-c099e6cb91a1",
       "name": "Split Out Campaigns"
     },
     {
@@ -188,10 +188,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1104,
-        0
+        1216,
+        320
       ],
-      "id": "d0316868-6bf5-4636-9abb-1f15a9e781c0",
+      "id": "f6b9ea62-ff37-4b49-b30f-d3ed322d99cc",
       "name": "Lọc Campaigns Active"
     },
     {
@@ -220,13 +220,13 @@
         },
         "options": {}
       },
-      "id": "910e6faa-e777-43c4-a5e1-18b8c271ae75",
+      "id": "bf970b4a-642f-47f9-ac33-09ebc108d5f6",
       "name": "Lấy dữ liệu Nhóm",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1328,
-        0
+        1440,
+        320
       ],
       "notesInFlow": true,
       "notes": "Lấy adsets từ campaigns active"
@@ -239,10 +239,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        1552,
-        0
+        1664,
+        320
       ],
-      "id": "e9093446-2312-471e-a299-1360f6afb2ff",
+      "id": "ef2ccc09-0e12-491e-b162-dc989de38aea",
       "name": "Split Out Adsets"
     },
     {
@@ -272,10 +272,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2224,
-        -192
+        2336,
+        128
       ],
-      "id": "a62514b0-725a-43ea-9b12-3e8f2dacc3b6",
+      "id": "0b234cb1-22f6-4909-8eb9-6ad352b3e8c3",
       "name": "Lọc Adsets PAUSED"
     },
     {
@@ -297,13 +297,13 @@
         },
         "options": {}
       },
-      "id": "80793fa7-71b2-4041-8718-57f6d0f5a354",
+      "id": "4e9b02b0-cefa-478f-ba94-195b8a779378",
       "name": "Bật nhom",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2448,
-        -120
+        2560,
+        208
       ]
     },
     {
@@ -315,10 +315,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -112,
-        -320
+        0,
+        0
       ],
-      "id": "4dcec297-7155-4113-a131-ddea9af179ac",
+      "id": "9e6075eb-216d-48f6-bf7e-31f0d3b1ceda",
       "name": "Sticky Note"
     },
     {
@@ -328,10 +328,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1776,
-        0
+        1888,
+        320
       ],
-      "id": "67119230-18e1-4ad8-a21f-a545f0008fde",
+      "id": "877a6c61-3900-4abd-a383-676c0e45d18d",
       "name": "Loop Over Items"
     },
     {
@@ -370,10 +370,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        2000,
-        -192
+        2112,
+        128
       ],
-      "id": "5aec3d2e-14aa-40ae-988c-10176338c777",
+      "id": "5ced4f72-89ff-4f70-924f-5e048eeaa5ee",
       "name": "Lọc nhóm trong ngưỡng theo chi tiêu"
     }
   ],
@@ -529,12 +529,13 @@
   },
   "active": false,
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "availableInMCP": false
   },
-  "versionId": "4c774fc4-45c2-49ae-bf9b-9cd618342f09",
+  "versionId": "64628dff-65f4-40ae-8ae2-359e6641835e",
   "meta": {
-    "instanceId": "8ae9064574590f4bef62fe6c8cafaae52a5a90dd40cb184103af1049753a2d5d"
+    "instanceId": "9afe67c5c4700f465bf756215b5e5e959b7e37136df48464de5e08eb43e7b2cb"
   },
-  "id": "aR6sf4xL1RveobJP",
+  "id": "wf5yMokmhXCYW57M",
   "tags": []
 }
