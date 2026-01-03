@@ -15,7 +15,7 @@
       "typeVersion": 1.2,
       "position": [
         -16,
-        112
+        0
       ],
       "id": "22083553-4476-47d5-827b-092e9df51285",
       "name": "Schedule Trigger"
@@ -27,14 +27,8 @@
             {
               "id": "3acae58a-6d3c-4db5-a1aa-edf9cd88181b",
               "name": "access_token",
-              "value": "",
+              "value": "EAATostwKkxMBQCfStbhkx6Jgdi0DrXO8FZCB32JHhAizaN0O7pZAEZCay2BoMZAYCUZBiqJeoCAj5LScxx2cL1duf8ZCQRT5HIyBnPTCDGpFPiaDABMABgCuaF2eG71rCMSZCskRpF1N60ZCDOWmZCBZAUbeTbeAVlJM1tLj75M4dAlMUia3PmbrrkeeH52R9sXmMMH0VJjBEq2fUz4LIinIYA",
               "type": "string"
-            },
-            {
-              "id": "1dda0de4-888e-4d16-9892-0491110769e8",
-              "name": "Nguong_CPA",
-              "value": 13000,
-              "type": "number"
             },
             {
               "id": "e06e933a-425d-4633-ac53-f70f7a04aec1",
@@ -45,7 +39,19 @@
             {
               "id": "fa677240-82bc-4d7f-8920-075213b9bdf2",
               "name": "Cam_Chi_Tieu_Nguong_Duoi",
-              "value": 8000,
+              "value": 1000,
+              "type": "number"
+            },
+            {
+              "id": "6454eca5-407b-426b-a213-5f0dffebd5c3",
+              "name": "Ty_Gia",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "1dda0de4-888e-4d16-9892-0491110769e8",
+              "name": "Nguong_CPA",
+              "value": 13000,
               "type": "number"
             },
             {
@@ -59,12 +65,6 @@
               "name": "Bao_Nhieu_Nhom_Tot",
               "value": 1,
               "type": "number"
-            },
-            {
-              "id": "6454eca5-407b-426b-a213-5f0dffebd5c3",
-              "name": "Ty_Gia",
-              "value": 1,
-              "type": "number"
             }
           ]
         },
@@ -74,7 +74,7 @@
       "typeVersion": 3.4,
       "position": [
         208,
-        112
+        0
       ],
       "id": "5588f411-dc29-4520-9072-ed297b235272",
       "name": "Thông Số Đầu Vào"
@@ -109,7 +109,7 @@
       "typeVersion": 3.4,
       "position": [
         432,
-        112
+        0
       ],
       "id": "70cab7a7-4254-4543-a167-638dab8cdcfd",
       "name": "Quy Đổi Theo Tỷ Suất"
@@ -142,7 +142,7 @@
       "typeVersion": 4.1,
       "position": [
         656,
-        112
+        0
       ],
       "notesInFlow": true,
       "notes": "Lấy tất cả campaigns"
@@ -156,7 +156,7 @@
       "typeVersion": 1,
       "position": [
         880,
-        112
+        0
       ],
       "id": "ea20f11a-4db3-44ce-8377-cb738192305d",
       "name": "Split Out Campaigns"
@@ -189,7 +189,7 @@
       "typeVersion": 2.2,
       "position": [
         1104,
-        112
+        0
       ],
       "id": "d0316868-6bf5-4636-9abb-1f15a9e781c0",
       "name": "Lọc Campaigns Active"
@@ -226,7 +226,7 @@
       "typeVersion": 4.1,
       "position": [
         1328,
-        112
+        0
       ],
       "notesInFlow": true,
       "notes": "Lấy adsets từ campaigns active"
@@ -240,7 +240,7 @@
       "typeVersion": 1,
       "position": [
         1552,
-        112
+        0
       ],
       "id": "e9093446-2312-471e-a299-1360f6afb2ff",
       "name": "Split Out Adsets"
@@ -272,8 +272,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2000,
-        64
+        2224,
+        -192
       ],
       "id": "a62514b0-725a-43ea-9b12-3e8f2dacc3b6",
       "name": "Lọc Adsets PAUSED"
@@ -302,21 +302,21 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2224,
-        144
+        2448,
+        -120
       ]
     },
     {
       "parameters": {
         "content": "Bật Tất cả nhóm quảng cáo",
-        "height": 400,
-        "width": 2576
+        "height": 480,
+        "width": 2752
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
         -112,
-        -64
+        -320
       ],
       "id": "4dcec297-7155-4113-a131-ddea9af179ac",
       "name": "Sticky Note"
@@ -329,10 +329,52 @@
       "typeVersion": 3,
       "position": [
         1776,
-        112
+        0
       ],
       "id": "67119230-18e1-4ad8-a21f-a545f0008fde",
       "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "bcbf93e1-2169-4b60-a2b3-158deb000f7c",
+              "leftValue": "={{ parseFloat($('Split Out Adsets').item.json.insights.data[0].spend) }}",
+              "rightValue": "={{ $('Quy Đổi Theo Tỷ Suất').item.json.Nguong_Duoi }}",
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            },
+            {
+              "id": "b075226f-11f1-4d28-b037-9826597195b5",
+              "leftValue": "={{ parseFloat($('Split Out Adsets').item.json.insights.data[0].spend) }}",
+              "rightValue": "={{ $('Quy Đổi Theo Tỷ Suất').item.json.Nguong_Tren }}",
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2000,
+        -192
+      ],
+      "id": "5aec3d2e-14aa-40ae-988c-10176338c777",
+      "name": "Lọc nhóm trong ngưỡng theo chi tiêu"
     }
   ],
   "pinData": {},
@@ -430,7 +472,7 @@
         [],
         [
           {
-            "node": "Lọc Adsets PAUSED",
+            "node": "Lọc nhóm trong ngưỡng theo chi tiêu",
             "type": "main",
             "index": 0
           }
@@ -465,13 +507,31 @@
           }
         ]
       ]
+    },
+    "Lọc nhóm trong ngưỡng theo chi tiêu": {
+      "main": [
+        [
+          {
+            "node": "Lọc Adsets PAUSED",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "7929a08e-0bdb-45be-b1bf-96c022c603e1",
+  "versionId": "4c774fc4-45c2-49ae-bf9b-9cd618342f09",
   "meta": {
     "instanceId": "8ae9064574590f4bef62fe6c8cafaae52a5a90dd40cb184103af1049753a2d5d"
   },
